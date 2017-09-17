@@ -5,6 +5,51 @@
     <meta charset="UTF-8">
     <title>News</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    .defaultStyle {
+            font:normal 12pt arial;
+            text-decoration: none;
+            background-color: #bbbbbb !important;
+    }
+
+    .firstStyle {
+            font:italic 12pt arial;
+            text-decoration: underline;
+            background-color: yellow !important;
+    }     
+    .secondStyle {
+            font:italic 12pt arial;
+            text-decoration: underline;
+            background-color: skyblue !important;
+    }
+    .thirdStyle {
+            font:italic 12pt arial;
+            text-decoration: underline;
+            background-color: lightgreen !important;
+    }
+    
+    .fourthStyle {
+            font:normal 10pt;
+            background-color: red;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            
+    }
+
+    .fifthStyle {
+            font:normal 8pt arial;
+            background-color: pink;
+            float:right;
+            width: 312px;
+            padding: 10px;
+            margin-top: 10px;
+
+
+    }
+
+  
+    
+    </style>
     <!--[if It IE 9]>
     <script>
       document.createElement("article");
@@ -16,27 +61,58 @@
       document.createElement("section");
     </script>
     <![end if]-->
+    <script src="lib.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function sidebar1_onMouseOver() {
+          var sidebar1 = document.getElementById("sidebar1");
+          sidebar1.className = "firstStyle";
+          sidebar1.innerHTML = "<h2>Trust yourself</h2><p>Just do it!</p>";
+        }
+
+        function sidebar1_onMouseOut() {
+          var sidebar1 = document.getElementById("sidebar1");
+          sidebar1.className = "defaultStyle";
+          sidebar1.innerHTML = "<h2>Be yourself</h2><p>Always aim for the best!</p>";
+        }
+
+        
+    </script>
   </head>
 
 
   <body>
 
     <header class="banner">
-      <h1>News</h1>
+      <h1 id="headline">News</h1>
       <p>Local and National News</p>
     </header>
 
     <nav>
-      <ul>
-        <li><a href="home.html">Home</a><li>
-        <li><a href="archive.html">Archives</a><li>
-        <li><a href="about.html">About</a><li>
+      <ul id="navlist">
+        <li><a href="home.html" onmouseover="sidebar1_onMouseOver()" onmouseout="sidebar1_onMouseOut()">Home</a><li>
+        <li><a href="archive.html" onmouseover="sidebar1_onMouseOver()" onmouseout="sidebar1_onMouseOut()">Archives</a><li>
+        <li><a href="about.html" onmouseover="sidebar1_onMouseOver()" onmouseout="sidebar1_onMouseOut()">About</a><li>
       </ul>
     </nav>
 
     <main>
       <section>
-        <h2>Local News</h2>
+        <h2 onmouseover="sidebar3_onMouseOver()" onmouseout="sidebar3_onMouseOut()">Local News</h2>
+
+      <script type="text/javascript">
+        function sidebar3_onMouseOver() {
+          var sidebar3 = document.getElementById("sidebar3");
+          sidebar3.className = "secondStyle";
+          sidebar3.innerHTML = "<h2>Here is a piece of local news.</h2><p>See what happening!</p>";
+        }
+
+        function sidebar3_onMouseOut() {
+          var sidebar3 = document.getElementById("sidebar3");
+          sidebar3.className = "defaultStyle";
+          sidebar3.innerHTML = "<h2>Be a news reporter</h2><p>If you see news happening - Send us a text.</p>";
+        }
+        </script> 
+        
 
         <article>
           <header>
@@ -59,7 +135,21 @@
 
 
       <section>
-        <h2>National News</h2>
+        <h2 onmouseover="sidebar2_onMouseOver()" onmouseout="sidebar2_onMouseOut()">National News</h2>
+
+        <script type="text/javascript">
+        function sidebar2_onMouseOver() {
+          var sidebar2 = document.getElementById("sidebar2");
+          sidebar2.className = "thirdStyle";
+          sidebar2.innerHTML = "<h2>Here is a piece of national news.</h2><p>See what happening!</p>";
+        }
+
+        function sidebar2_onMouseOut() {
+          var sidebar2 = document.getElementById("sidebar2");
+          sidebar2.className = "defaultStyle";
+          sidebar2.innerHTML = "<h2>Be a news reporter</h2><p>If you see news happening - Send us a text.</p>";
+        }
+        </script>
 
         <article>
           <header>
@@ -81,14 +171,71 @@
       </section>
     </main>
 
-    <aside>
+    <aside id="sidebar3" class="defaultStyle">
+      <h2>Be a news observer</h2>
+      <p>If you feel something strange - Think about it.</P>
+    </aside>
+
+    <aside id="sidebar2" class="defaultStyle">
       <h2>Be a news reporter</h2>
       <p>If you see news happening - Send us a text.</P>
     </aside>
 
+    <div id="sidebar1" class="defaultStyle">
+      <h2>Be yourself</h2>
+      <p>Always aim for the best!</P>
+    </div>
+
+    
+
+    <button1 id="greeting" onMouseOver="myFunction()">
+    Welcome
+    </button1>
+    <script>
+    function myFunction() {
+    var greeting;
+    var time = new Date().getHours();
+    if (time < 11) {
+        greeting = "Good morning";
+    } else if (time < 18) {
+        greeting = "Good afternoon";
+    } else {
+        greeting = "Good evening";
+    }
+    document.getElementById("greeting").innerHTML = greeting;
+    }
+    </script>
+
+    <button id="demo" type="button" class="fifthStyle"
+    onclick="document.getElementById('demo').innerHTML = Date()">
+    Click me to display Date and Time.
+    </button>
+
+    <footer id="abc" class="fourthStyle" onclick="mFunction()">
+    a = 10, b = 20, c = 30, x = ( a + b ) * c = ?       
+    <br>Click here to see the answer!
+    </footer>
+    <script type="text/javascript">
+      function mFunction() {
+       var a = 10;
+       var b = 20;
+       var c = 30
+       var x = (a + b) * c;
+       document.getElementById("abc").innerHTML = x;
+
+      }
+    </script>
+   
+
+
+
     <footer>
     <p>Footer Information</p>
     </footer>
+
+
+
+</body>
 
   </body>
 </html>

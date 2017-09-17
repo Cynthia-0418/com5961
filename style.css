@@ -93,6 +93,27 @@ aside {
 	margin-top: 10px;
 }
 
+div{
+	background-color: #bbbbbb;
+	width: 270px;
+	float: right;
+	padding: 20px;
+	margin-top: 10px;
+}
+
+button1{
+    background-color: orange;
+	width: 270px;
+	float: right;
+	padding: 20px;
+	margin-top: 10px;
+	font-size: 25px;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+
+
 footer {
 	clear: both;
 	background-color: #20416c;
